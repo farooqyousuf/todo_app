@@ -1,9 +1,7 @@
 Tasks::Application.routes.draw do
   
-  get "tasks" => "tasks#index"
-  get "tasks/:id" => "tasks#show", as: "task"
-  get "tasks/:id/edit" => "tasks#edit", as: "edit_task"
-  put "tasks/:id" => "tasks#update"
+  resources :tasks
+  root to: "tasks#index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
