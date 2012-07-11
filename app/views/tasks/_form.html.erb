@@ -1,0 +1,15 @@
+<%= form_for(@task) do |f| %>
+  <p>
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+    <%= f.label :details %><br/>
+    <%= f.text_area :details, cols: 40, rows: 7 %>
+    <%= f.label :priority %><br/>
+    <%= f.text_field :priority %>
+    <%= f.label :status %><br/>
+    <%= f.text_field :status, size: 10 %>
+  </p>
+    <%= f.submit %> |
+	<%= link_to "Cancel", @task %>
+  </p>
+<% end %>
