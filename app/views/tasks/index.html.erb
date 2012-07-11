@@ -1,0 +1,16 @@
+<header>
+  <h1>All Tasks</h1>
+</header>
+ 
+
+<% @task.each do |task| %>
+    <header>
+      <h2><%= link_to task.name, task %> </h2>
+    </header>
+
+    <p><strong>Details</strong>: <%= task.details %></p>
+	<p><strong>Priority</strong>: <%= task.priority %></p>
+	<p><strong>Status</strong>: <%= task.status %></p>
+	
+<% end %>
+

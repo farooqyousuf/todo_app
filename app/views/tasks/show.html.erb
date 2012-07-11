@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <th colspan="2"><%= @task.name %> </th>
+  </tr>
+  <tr>
+    <td>Details:</td>
+    <td><%= @task.details %></td>
+  </tr>
+  <tr>
+    <td>Priority:</td>
+    <td><%= @task.priority %></td>
+  </tr>
+  <tr>
+    <td>Status:</td>
+    <td><%= @task.status %></td>
+  </tr>
+</table>
+<%= link_to "Edit", edit_task_path(@task) %> |
