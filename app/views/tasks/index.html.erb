@@ -1,20 +1,18 @@
-<header>
-  <h1>Tasks</h1>
-</header>
+<%= render "tasks/header" %>
 
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#tab1" data-toggle="tab">All Tasks</a></li>
-  <li><a href="#tab2" data-toggle="tab">Pending Tasks</a></li>
+  <li class="active"><a href="#tab1" data-toggle="tab">Pending Tasks</a></li>
+  <li><a href="#tab2" data-toggle="tab">All Tasks</a></li>
   <li><a href="#tab3" data-toggle="tab">Completed Tasks</a></li>
 </ul>
 
 <div class="tab-content">
 	<div class="tab-pane active" id="tab1">
-		<%= render :partial => "tasks", :locals => {:tasks_container => @tasks} %>
-	</div>
-	<div class="tab-pane" id="tab2">
 		<%= render :partial => "tasks", :locals => {:tasks_container => @pending_tasks} %>
 	</div>
+		<div class="tab-pane" id="tab2">
+				<%= render :partial => "tasks", :locals => {:tasks_container => @tasks} %>
+		</div>
 	<div class="tab-pane" id="tab3">
 		<%= render :partial => "tasks", :locals => {:tasks_container => @completed_tasks} %>
 	</div>

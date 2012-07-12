@@ -16,8 +16,11 @@ class TasksController < ApplicationController
    
    def update
      @task = Task.find(params[:id])
-     @task.update_attributes(params[:task])
-     redirect_to @task
+     if @task.update_attributes(params[:task])
+       redirect_to @task, notice: "Task #{@task.name} updated!"
+     else
+       render :edit
+     end
    end
    
    def new
@@ -26,14 +29,17 @@ class TasksController < ApplicationController
    
    def create
      @task = Task.new(params[:task])
-     @task.save
-     redirect_to @task
+     if @task.save
+       redirect_to @task, notice: "Task #{@task.name} created!"
+     else
+       render :new
+     end
    end
    
    def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to root_url
+    redirect_to root_url, notice: "Task was deleted"
    end
    
 end
