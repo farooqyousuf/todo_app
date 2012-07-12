@@ -5,9 +5,9 @@
     <%= f.label :details %><br/>
     <%= f.text_area :details, cols: 40, rows: 7 %>
     <%= f.label :priority %><br/>
-    <%= f.text_field :priority %>
+    <%= f.select :priority, Task::PRIORITY_TYPES %>
     <%= f.label :status %><br/>
-    <%= f.text_field :status, size: 10 %>
+    <%= f.select :status, Task::STATUS_TYPES %>
   </p>
     <%= f.submit %> |
 	<%= link_to "Cancel", @task %>

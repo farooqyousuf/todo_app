@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
   
   def index
-     @task = Task.all
+     @tasks = Task.all
+     @pending_tasks = Task.where("status = ?","Pending")
+     @completed_tasks =Task.where("status = ?","Complete")
    end
    
    def show
@@ -26,6 +28,12 @@ class TasksController < ApplicationController
      @task = Task.new(params[:task])
      @task.save
      redirect_to @task
+   end
+   
+   def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to root_url
    end
    
 end

@@ -18,7 +18,7 @@
 				<a class="brand" href="#">Farooq's Awesome To-Do List!</a>
 				<div class="nav-collapse">
 					<ul class="nav">
-						<li><%= link_to "Browse Tasks", root_path %></li>
+						<li><%= link_to "Tasks", root_path %></li>
 						<li><%= link_to "Add New Task", new_task_path %></li>
 						<li><%= link_to "Contact Us"%></li>
 					</ul>
@@ -26,8 +26,11 @@
 			</div>
 		</div>
 	</div>
-<div class="container">
-<%= yield %>
+
+	<div class="container">
+		<%= yield %>
+	</div>
+
 </div>
 </body>
 </html>
