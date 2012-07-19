@@ -1,7 +1,13 @@
 Tasks::Application.routes.draw do
   
+  get "static_pages/home"
+
   resources :tasks
   root to: "tasks#index"
+  get "static_pages/home"
+  # match "/static_pages/home" => "static_pages#home", :via => :get
+  # match "/static_pages/help" => "static_pages#help", :via => :get
+  # match "/static_pages/about" => "static_pages#about", :via => :get
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
