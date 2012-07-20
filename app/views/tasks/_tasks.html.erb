@@ -1,9 +1,9 @@
 <% tasks_container.each do |task| %>
-    <header>
+    
+	<header>
       <h2><%= link_to task.name, task %> </h2>
     </header>
-
-    <p><strong>Details</strong>: <%= task.details %></p>
-	<p><strong>Priority</strong>: <%= task.priority %></p>
-	<p><strong>Status</strong>: <%= task.status %></p>
+			<li><strong>Details</strong>: <%= task.details %></li>
+			<li><strong>Priority</strong>: <%= task.priority %></li>
+			<li><strong>Status</strong>: <%= task.status %></li><br><br>
 <% end %>

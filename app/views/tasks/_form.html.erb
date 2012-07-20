@@ -1,15 +1,18 @@
-<%= form_for(@task) do |f| %>
-  <p>
-    <%= f.label :name %><br/>
-    <%= f.text_field :name %>
-    <%= f.label :details %><br/>
-    <%= f.text_area :details, cols: 40, rows: 7 %>
-    <%= f.label :priority %><br/>
-    <%= f.select :priority, Task::PRIORITY_TYPES, prompt: "Pick one" %>
-    <%= f.label :status %><br/>
-    <%= f.select :status, Task::STATUS_TYPES, prompt: "Pick one" %>
-  </p>
-    <%= f.submit %> |
-	<%= link_to "Cancel", @task %>
-  </p>
-<% end %>
+<form class="well">
+	<%= form_for(@task) do |f| %>
+		<label><%= f.label :name %></label>
+		<%= f.text_field :name %>
+	
+	    <label><%= f.label :details %></label>
+		<%= f.text_area :details, cols: 40, rows: 7 %>
+	
+	    <label><%= f.label :priority %></label>
+	    <%= f.select :priority, Task::PRIORITY_TYPES, prompt: "Pick one" %>
+	
+	    <label><%= f.label :status %></label>
+	    <%= f.select :status, Task::STATUS_TYPES, prompt: "Pick one" %><br>
+		
+		<%= f.submit 'Create Task', :class => 'btn btn-success' %>
+		<%= link_to "Cancel", @task, :class => 'btn btn-danger' %>
+	<% end %>
+</form>
